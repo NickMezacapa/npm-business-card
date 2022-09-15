@@ -1,0 +1,89 @@
+{
+  "name": "nickmez",
+  "version": "0.0.1",
+  "description": "Personal npm card for Nick Mezacapa (@www.linkedin.com/in/NickMezacapa)",
+  "main": "dist/card.js",
+  "unpkg": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/https://github.com/NickMezacapa/npm-business-card.git"
+  },
+  "scripts": {
+    "prepare": "node src/htmlify",
+    "prepublishOnly": "rm -rf dist && webpack"
+  },
+  "bin": {
+    "nickmez": "bin/index.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "index.html"
+  ],
+  "keywords": [
+    "card",
+    "npm",
+    "npm card",
+    "npx",
+    "npx card",
+    "business card"
+  ],
+  "author": "Nick Mezacapa",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "ansi-to-html": "^0.6.9",
+    "babel-loader": "^8.0.4",
+    "boxen": "^2.1.0",
+    "chalk": "^2.4.1",
+    "chalker": "^1.0.0",
+    "lodash.get": "^4.4.2",
+    "webpack": "^4.28.1",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.1.2"
+  },
+  "myCard": {
+    "info": {
+      "message": "Hello World!",
+      "name": "Nick Mezacapa",
+      "handle": "NickMezacapa",
+      "twitter": "nickmezacapa1",
+      "npm": "nickmezacapa",
+      "github": "NickMezacapa",
+      "linkedin": "NickMezacapa",
+      "web": "nickmez.com",
+      "work": "Full-Stack Software Engineer"
+    },
+    "data": [
+      "<white>{{message}}</>",
+      "",
+      "<cyan.bold>{{name}}</>",
+      {
+        "text": "{{work}}"
+      },
+      "",
+      {
+        "label": "GitHub",
+        "text": "https://github.com/<cyan>{{github}}</>",
+        "when": "{{github}}"
+      },
+      {
+        "label": "LinkedIn",
+        "text": "https://www.linkedin.com/in/<cyan>{{linkedin}}</>",
+        "when": "{{linkedin}}"
+      },
+      {
+        "label": "Web",
+        "text": "<cyan>{{web}}</>",
+        "when": "{{web}}"
+      },
+      "",
+      {
+        "label": "Card",
+        "text": "<cyan>npx</> {{_packageName}}"
+      }
+    ]
+  }
+}
